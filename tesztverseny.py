@@ -1,4 +1,5 @@
 #!/bin/python3
+# 1. feladat
 helyes_megoldasok = ""
 versenyzok = []
 versenyzo_megoldasok = []
@@ -10,12 +11,15 @@ with open("valaszok.txt", 'r', encoding="UTF-8") as f:
     versenyzo_megoldasok = [i.split()[1] for i in data[1:]]
     f.close()
 
+# 2. feladat
 print(f'A vetélkedőn {len(versenyzok)} versenyző indult.')
 
+# 3. feladat
 kert_versenyzo = input("A versenyző azonosítója = ")
 
 print(versenyzo_megoldasok[versenyzok.index(kert_versenyzo)])
 
+# 4. feladat
 print(helyes_megoldasok, end="")
 
 for i in range(len(versenyzo_megoldasok[versenyzok.index(kert_versenyzo)])):
@@ -26,6 +30,7 @@ for i in range(len(versenyzo_megoldasok[versenyzok.index(kert_versenyzo)])):
 
 print("\n")
 
+# 5. feladat
 versenyzo_helyes_megoldasok = 0
 
 feladat_sorszam = int(input("A feladat sorszáma = "))
@@ -40,11 +45,13 @@ helyes_megoldasok_atlag = versenyzo_helyes_megoldasok / len(versenyzok) * 100
 
 print(f'A feladatra {versenyzo_helyes_megoldasok} fő, a versenyzők {helyes_megoldasok_atlag:.2f}%-a adott helyes választ.')
 
+# Általános
 def kiir(szoveg):
     with open("pontszam.txt", "w", encoding="UTF-8") as f:
         f.write(szoveg)
         f.close()
 
+# 6. feladat
 pontszam_kert_versenyzo = input("A versenyző kódja: ")
 
 if pontszam_kert_versenyzo not in versenyzok:
