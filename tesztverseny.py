@@ -7,8 +7,9 @@ versenyzo_megoldasok = []
 with open("valaszok.txt", 'r', encoding="UTF-8") as f:
     data = f.readlines()
     helyes_megoldasok = data[0]
-    versenyzok = [i.split()[0] for i in data[1:]]
-    versenyzo_megoldasok = [i.split()[1] for i in data[1:]]
+    for i in data[1:]:
+        versenyzok.append(i.split()[0])
+        versenyzo_megoldasok.append(i.split()[1])
     f.close()
 
 # 2. feladat
